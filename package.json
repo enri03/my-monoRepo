@@ -1,0 +1,16 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:app": "cd packages/app && npm start",
+    "start:backend": "cd packages/backend && node server.js",
+    "start": "concurrently \"npm:start:backend\" \"npm:start:app\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "lerna": "^7.4.1"
+  }
+}

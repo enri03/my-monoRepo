@@ -1,0 +1,15 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '7.4.1',
+0 silly argv   '$0': '..\\..\\AppData\\Roaming\\npm\\node_modules\\lerna\\dist\\cli.js',
+0 silly argv   name: 'app'
+0 silly argv }
+1 notice cli v7.4.1
+2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+3 verbose rootPath C:\Users\ekapaj\Desktop\my-monorepo
+4 error Error: Command failed with exit code 1: git config --get user.email
+4 error     at makeError (C:\Users\ekapaj\Desktop\my-monorepo\node_modules\execa\lib\error.js:59:11)
+4 error     at module.exports.sync (C:\Users\ekapaj\Desktop\my-monorepo\node_modules\execa\index.js:186:17)
+4 error     at Object.execSync2 [as execSync] (C:\Users\ekapaj\Desktop\my-monorepo\node_modules\@lerna\create\dist\command.js:67:21)
+4 error     at CreateCommand.gitConfig (C:\Users\ekapaj\Desktop\my-monorepo\node_modules\@lerna\create\dist\command.js:4075:31)
+4 error     at CreateCommand.initialize (C:\Users\ekapaj\Desktop\my-monorepo\node_modules\@lerna\create\dist\command.js:4009:51)
