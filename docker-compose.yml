@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: packages/app/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./packages/app:/app
+      - /app/node_modules
+
+  backend:
+    build:
+      context: .
+      dockerfile: packages/backend/Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./packages/backend:/backend
+      - /backend/node_modules
+

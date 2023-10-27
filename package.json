@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "start:app": "cd packages/app && npm start",
-    "start:backend": "cd packages/backend && node server.js",
+    "start:backend": "cd packages/backend && nodemon server.js",
     "start": "concurrently \"npm:start:backend\" \"npm:start:app\""
   },
   "devDependencies": {
