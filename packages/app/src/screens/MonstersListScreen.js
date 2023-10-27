@@ -20,6 +20,7 @@ const MonstersListScreen = () => {
   const [deleteSuccess, setDeletetSuccess] = useState();
   const [message, setMessage] = useState("");
   const [fetchMonsterError, setFetchMonsterError] = useState(false);
+  const [loading,setLoading] = useState(false); 
 
   // Function to delete a monster by ID
   const deleteMonster = async (monsterId) => {
@@ -57,17 +58,21 @@ const MonstersListScreen = () => {
 
   useEffect(() => {
     const fetchMonsters = async () => {
+      
       try {
+        setLoading(true)
         const { data } = await axios.get(
           `http://localhost:5000/api/monsters?page=${page}&limit=${limit}`
         );
         setMonsters(data.monsters);
         setTotalMonsters(data.totalMonsters);
+        setLoading(false)
       } catch (error) {
         setFetchMonsterError(true);
         setMessage(
           "Something went wrong fetching the data, please referesh the page "
         );
+        setLoading(false);
       }
     };
     fetchMonsters();
@@ -112,7 +117,8 @@ const MonstersListScreen = () => {
               </Card>
             </Col>
           ))
-        ) : (
+        ): loading? <div className="text-center">Loading ...</div> : 
+        (
           <div className="text-center">There are no monsters created yet</div>
         )}
       </Row>
