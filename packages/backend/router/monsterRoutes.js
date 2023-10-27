@@ -3,7 +3,6 @@ import { createMonster,generateRandomMonster,getMonstersList,deleteMonsterByID }
 
 const router = express.Router();
 
-// Create a new monster
 router.get('/monsters',getMonstersList)
 router.post('/create-monster', createMonster);
 router.post('/generate-random-monster',generateRandomMonster);
